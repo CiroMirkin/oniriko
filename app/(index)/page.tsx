@@ -1,9 +1,18 @@
+import { cn } from "@/lib";
+import { ProductList } from "./ProductList";
+import { titleFont } from "@/lib/font";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      
-    </div>
+    <>
+      <header className="w-full py-4 px-6 bg-primary text-white">
+        <span className={cn("text-xl font-bold", titleFont.className)}>oniri-ko</span>
+      </header>
+      <div className="">
+        <ProductList />
+        
+      </div>
+    </>
   )
 }
 
