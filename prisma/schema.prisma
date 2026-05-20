@@ -23,6 +23,8 @@ model Product {
 
   ProductImage ProductImage[]
 
+  author Author @relation(fields: [authorId], references: [id])
+  authorId String
 }
 
 model ProductImage {
@@ -32,4 +34,12 @@ model ProductImage {
 
   product Product @relation(fields: [productId], references: [id])
   productId String
+}
+
+model Author {
+  id String @id @default(uuid())
+  name String
+  about String?
+
+  product Product[] 
 }
